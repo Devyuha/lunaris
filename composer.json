@@ -24,7 +24,7 @@
             "name": "Bhaswanth Chiruthanuru"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require-dev": {
         "pecee/simple-router": "dev-master",
