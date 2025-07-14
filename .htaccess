@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    RewriteEngine on
+
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <Files *.log>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ public/$1
+</IfModule>
