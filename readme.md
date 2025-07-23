@@ -52,6 +52,28 @@ git clone https://github.com/Devyuha/lunaris.git
 composer install
 ```
 
+#### Running using Podman/Docker :
+
+To run the project using `Podman` or `Docker` :
+
+```
+cd <your_project_directory>/docker
+```
+
+All `Docker` and `Podman` compose files are located in `docker` directory.
+
+```bash
+// With podman
+podman-compose build
+podman-compose up -d
+
+// With docker
+docker-compose build
+docker-compose up -d
+```
+
+*Note :* For `Podman`, you may need to install additional tool called `podman-compose`.
+
 ### Project Structure :
 
 ```
@@ -68,4 +90,6 @@ Lunaris/
 ```
 
 ---
+## License
 
+The Lunaris framework is open-sourced software licensed under the [MIT License](https://opensource.org/license/MIT).
