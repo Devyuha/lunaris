@@ -1,0 +1,38 @@
+# version: '3.8'
+
+services:
+  php:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: lunaris-php-container
+    volumes:
+      - ../:/var/www/html:z
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - lunaris_network
+
+  mysql:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.mysql
+    container_name: lunaris-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lunarisdb
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - lunaris_network
+
+volumes:
+  mariadb_data:
+
+networks:
+  lunaris_network:
+    driver: bridge
