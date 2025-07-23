@@ -42,4 +42,27 @@
 
             return $content;
         }
+
+        public static function middleware($moduleName, $middlewareName=null) {
+            if(!$middlewareName) {
+                $middlewareName = $moduleName . 'Middleware';
+            }
+
+            $content = <<<PHP
+            <?php
+
+                namespace Module\\{$moduleName}\\Middlewares;
+
+                use Pecee\\Http\\Middleware\\IMiddleware;
+                use Pecee\\Http\\Request;
+
+                class {$middlewareName} implements IMiddleware {
+                    public function handle(Request \$request): void {
+                        //
+                    }
+                }
+            PHP;
+
+            return $content;
+        }
     }

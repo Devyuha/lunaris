@@ -176,14 +176,6 @@
         return false;
     }
 
-    function getConfigPath() {
-        $basePath = dirname(getcwd());
-        $configPath = $basePath . "/config.php";
-        $config = require $configPath;
-
-        return $config;
-    }
-
     function fetchArgs(array $args) {
         $parsed = [];
         if(count($args) > 0) {
