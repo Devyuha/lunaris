@@ -7,9 +7,5 @@
     </head>
     <body>
         <h1>Welcome from main controller</h1>
-
-        <?php
-            inject("includes.nest");
-        ?>
     </body>
 </html>
